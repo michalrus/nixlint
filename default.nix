@@ -27,6 +27,6 @@ writeShellApplication {
     coreutils
   ];
   text = builtins.readFile ./wrapper.sh;
-  derivationArgs.meta.description = "Run Nix linters on files or directories";
-  derivationArgs.meta.platforms = lib.platforms.linux;
+  derivationArgs.meta.description = "Run all Nix linters on files or directories";
+  derivationArgs.meta.platforms = lib.platforms.unix;
 }
