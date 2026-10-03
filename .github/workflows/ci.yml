@@ -1,0 +1,13 @@
+name: CI
+on:
+  push:
+permissions:
+  contents: read
+jobs:
+  nixlint:
+    runs-on: [self-hosted, monstrum]
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - run: nix build -L --no-link .#checks.x86_64-linux.nixlint
